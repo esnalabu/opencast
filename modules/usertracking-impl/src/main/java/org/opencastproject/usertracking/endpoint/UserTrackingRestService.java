@@ -209,8 +209,8 @@ public class UserTrackingRestService {
   @Produces(MediaType.TEXT_XML)
   @Path("/report.xml")
   @RestQuery(name = "reportasxml", description = "Get a report for a time range", returnDescription = "The report.", restParameters = {
-          @RestParameter(name = "from", description = "The beginning of the time range", isRequired = false, type = Type.STRING),
-          @RestParameter(name = "to", description = "The end of the time range", isRequired = false, type = Type.STRING),
+          @RestParameter(name = "from", description = "The beginning of the time range, yyyyMMdd or yyyyMMddhhmm", isRequired = false, type = Type.STRING),
+          @RestParameter(name = "to", description = "The end of the time range, yyyyMMdd or yyyyMMddhhmm", isRequired = false, type = Type.STRING),
           @RestParameter(name = "limit", description = "The maximum number of items to return per page", isRequired = false, type = Type.INTEGER),
           @RestParameter(name = "offset", description = "The page number", isRequired = false, type = Type.INTEGER) }, reponses = { @RestResponse(responseCode = SC_OK, description = "An XML representation of the report") })
   public ReportImpl reportAsXml(@QueryParam("from") String from, @QueryParam("to") String to,
@@ -240,8 +240,8 @@ public class UserTrackingRestService {
   @Produces(MediaType.APPLICATION_JSON)
   @Path("/report.json")
   @RestQuery(name = "reportasjson", description = "Get a report for a time range", returnDescription = "The report.", restParameters = {
-          @RestParameter(name = "from", description = "The beginning of the time range", isRequired = false, type = Type.STRING),
-          @RestParameter(name = "to", description = "The end of the time range", isRequired = false, type = Type.STRING),
+          @RestParameter(name = "from", description = "The beginning of the time range, yyyyMMdd or yyyyMMddhhmm", isRequired = false, type = Type.STRING),
+          @RestParameter(name = "to", description = "The end of the time range, yyyyMMdd or yyyyMMddhhmm", isRequired = false, type = Type.STRING),
           @RestParameter(name = "limit", description = "The maximum number of items to return per page", isRequired = false, type = Type.INTEGER),
           @RestParameter(name = "offset", description = "The page number", isRequired = false, type = Type.INTEGER) }, reponses = { @RestResponse(responseCode = SC_OK, description = "A JSON representation of the report") })
   public ReportImpl reportAsJson(@QueryParam("from") String from, @QueryParam("to") String to,
